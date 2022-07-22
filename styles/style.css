@@ -15,7 +15,7 @@ White: #FFF
 
 #navbar {
     position: fixed;
-    background-color: white;
+    background-color: #FFF;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -40,9 +40,9 @@ White: #FFF
 }
 
 #music-for-everyone{
-    position:static;
+    text-align: center;
     height: 500px;
-    width: 100%;
+    width: 100vw;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -55,24 +55,34 @@ White: #FFF
 }
 
 #music-for-everyone h1{
-    font-size: 60px;
-    margin: 10px;
+    /* otra opcion que no funcionaba... 
+    font-size: clamp(minimum-size, prefered-size, maximum-size)*/
+    font-size: calc(22px + 2vw);
+    padding-top: 10px;
     font-weight: 500;
     margin-bottom: 30px;
+}
+
+#music-for-everyone h2{
+    font-size: calc(12px + 0.5vw);
+    font-weight: 500;
 }
 
 #whats-on-spotify{
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: space-between;
 }
 
 #whats-on-spotify h2{
     color: #1A1A1A;
     border-bottom: 3px solid #00B172;
-    width: 200px;
+    font-size: calc(20px + 1vw);
+    text-align: center;
     font-weight: 900;
-    margin: 40px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    align-self: center;
 }
 
 #whats-on-spotify img{
@@ -87,49 +97,71 @@ White: #FFF
 .three-icons{
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     justify-content: space-around;
-    margin: 40px;
+    margin: 20px;
     text-align: center;
 }
 
 .three-icons > div{
     width: 200px;
+    margin: 20px;
+}
+
+div > h3 {
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 #kanye-west{
     background-color: #00B172;
     height: 620px;
     margin: 25px;
-    position: relative;
 }
 
 .text-pic{
     display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    color: #FFF;
+    text-align: center;
 }
 
 #kanye-west h2{
-    border-bottom: 2px solid #FFF;
+    text-decoration: underline;
+    text-underline-offset: 8px;
     line-height: 40px;
+    margin: 40px 30px 30px 30px;
+    text-align: left;
 }
 
 #kanye-west h3{
     margin-bottom: 10px;
     font-weight: 900;
+    text-align: left;
 }
 
-
 .text-kanye-west > div{
-    margin: 40px;
+    margin: auto;
     color: #FFF;
-    width: 300px;
+    text-align: center;
+    margin-left: 30px;
+    margin-right: 30px;
 }
 
 .text-kanye-west{
-    margin: 40px auto;
+    margin-top: 40px;
+    margin-bottom: 60px;
+    max-width: 400px;
+}
+
+.text-kanye-west p{
+    font-size: calc(10px+ 2vw);
+    text-align: left;
 }
 
 .image-kanye-west{
-    margin: 40px auto;
+    margin: 40px;
 }
 
 .image-kanye-west img{
@@ -140,4 +172,46 @@ White: #FFF
     width: 100px;
     height: 100px;
     align-self: center
+}
+
+@media (max-width: 900px){
+    .white-icon{
+        display: none;
+    }
+}
+
+@media (max-width: 730px){
+    #kanye-west{
+        height: 1040px;
+    }
+
+    .text-pic{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .image-kanye-west img{
+        width: 200px;
+    }   
+}
+
+
+@media (max-width: 530px){
+    .three-icons{
+        flex-wrap: nowrap;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .image-kanye-west img{
+        width: 45vw;
+    }
+}
+
+
+@media (max-width: 476px){
+    /*Hamburger button en un futuro :P*/
+    .navigation-links{
+        display: none;
+    }
 }
